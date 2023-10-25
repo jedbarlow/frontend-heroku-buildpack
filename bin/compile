@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir> <env-dir>
+
+BUILD_DIR=${1:-}
+CACHE_DIR=${2:-}
+ENV_DIR=${3:-}
+
+PROJECT_ROOT_DIR="$BUILD_DIR/web"
+#PACKAGE_JSON="$BUILD_DIR/web/frontend/package.json"
+YARN_LOCK="$BUILD_DIR/yarn.lock"
+
+#echo "Copying package.json to project root"
+#cp "$PACKAGE_JSON" "$PROJECT_ROOT_DIR"
+
+echo "Copying yarn.lock to project root"
+cp "$YARN_LOCK" "$PROJECT_ROOT_DIR"
+cp "$YARN_LOCK" "$PROJECT_ROOT_DIR/frontend"
+
+exit 0
